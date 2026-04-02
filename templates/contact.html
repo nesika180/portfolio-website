@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f0f0f;
+            color: white;
+            margin: 0;
+        }
+
+        /* CONTAINER */
+        .contact-container {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 30px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* HEADINGS */
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        /* CONTACT INFO */
+        .contact-info p {
+            margin: 8px 0;
+            color: #ccc;
+        }
+
+        .contact-info a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* FORM */
+        form {
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            background: #2a2a2a;
+            color: white;
+            font-size: 14px;
+        }
+
+        input:focus,
+        textarea:focus {
+            border: 1px solid #0d6efd;
+            background: #222;
+        }
+
+        /* BUTTON */
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0d6efd;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .contact-container {
+                margin: 40px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="contact">
+        <div class="contact-container">
+
+            <h2>Contact Me</h2>
+            <p class="subtitle">Let’s connect — open to opportunities and collaborations</p>
+
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:nesika180@gmail.com">nesika180@gmail.com</a></p>
+                <p><strong>Phone:</strong> +91 9043068769</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nesika-senthil-kumar-177513297/"
+                        target="_blank">View Profile</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/nesika180" target="_blank">View Projects</a></p>
+            </div>
+            {% if success %}
+            <p style="color: lightgreen; font-weight: bold;">
+                Message sent successfully!
+            </p>
+            {% endif %}
+
+            <form method="POST" action="/contact">
+
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
